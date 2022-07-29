@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    " G ",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "tag": "minecraft:oak_slabs"
+    },
+    "G": {
+      "item": "intellimisc:slime_gel"
+    }
+  },
+  "result": {
+    "item": "intellimisc:plywood_planks",
+    "count": 3
+  }
+}
