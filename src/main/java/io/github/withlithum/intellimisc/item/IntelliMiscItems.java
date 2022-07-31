@@ -31,7 +31,7 @@ public final class IntelliMiscItems {
 
     public static void registerItems() {
         Log.info(LogCategory.LOG, "Registering items for IntelliMisc");
-        Registry.register(Registry.ITEM, IntelliMisc.getIdentifier("raw_pufferfish"), RAW_PUFFERFISH);
-        Registry.register(Registry.ITEM, IntelliMisc.getIdentifier("slime_gel"), SLIME_GEL);
+        Registry.register(Registry.ITEM, IntelliMisc.id("raw_pufferfish"), RAW_PUFFERFISH);
+        Registry.register(Registry.ITEM, IntelliMisc.id("slime_gel"), SLIME_GEL);
     }
 }

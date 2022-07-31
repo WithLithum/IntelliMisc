@@ -24,19 +24,20 @@ public final class IntelliMiscBlocks {
             .sounds(BlockSoundGroup.WOOD));
 
     public static void registerBlocks() {
-        Log.info(LogCategory.LOG, "IntelliMisc: Registering Blocks");
-        Registry.register(Registry.BLOCK, IntelliMisc.getIdentifier("plywood_planks"), PLYWOOD_PLANKS);
+        IntelliMisc.LOGGER.info("Registering blocks");
+        Registry.register(Registry.BLOCK, IntelliMisc.id("plywood_planks"), PLYWOOD_PLANKS);
 
-        Log.info(LogCategory.LOG, "IntelliMisc: Registering flammables");
+        IntelliMisc.LOGGER.info("Registering flammable block information");
         FlammableBlockRegistry.getDefaultInstance().add(PLYWOOD_PLANKS, 1, 1);
     }
 
     public static void registerBlockItems() {
-        Log.info(LogCategory.LOG, "IntelliMisc: Registering block items");
-        registerBlockItem(PLYWOOD_PLANKS, IntelliMisc.getIdentifier("plywood_planks"), ItemGroup.BUILDING_BLOCKS);
+        IntelliMisc.LOGGER.info("Registering block items");
+        registerBlockItem(PLYWOOD_PLANKS, IntelliMisc.id("plywood_planks"), ItemGroup.BUILDING_BLOCKS);
     }
 
     public static void registerBlockItem(Block block, Identifier id, ItemGroup group) {
+        IntelliMisc.LOGGER.debug("Registering block item for " + id.toString());
         Registry.register(Registry.ITEM, id, new BlockItem(block, new FabricItemSettings().group(group)));
     }
 }

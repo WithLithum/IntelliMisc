@@ -1,11 +1,12 @@
 package io.github.withlithum.intellimisc;
 
 import io.github.withlithum.intellimisc.block.IntelliMiscBlocks;
+import io.github.withlithum.intellimisc.enchant.IntelliMiscEnchants;
 import io.github.withlithum.intellimisc.item.IntelliMiscItems;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.loader.impl.util.log.Log;
-import net.fabricmc.loader.impl.util.log.LogCategory;
 import net.minecraft.util.Identifier;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -15,16 +16,19 @@ import org.jetbrains.annotations.NotNull;
 public class IntelliMisc implements ModInitializer {
     @Override
     public void onInitialize() {
-        Log.info(LogCategory.LOG, "IntelliMisc: Instantiated!");
+        LOGGER.info("Instantiated!");
         IntelliMiscItems.registerItems();
         IntelliMiscBlocks.registerBlocks();
         IntelliMiscBlocks.registerBlockItems();
+        IntelliMiscEnchants.registerEnchants();
     }
+
+    public static final Logger LOGGER = LogManager.getLogger("IntelliMisc");
 
     public static final String NAMESPACE = "intellimisc";
 
     @Contract("_ -> new")
-    public static @NotNull Identifier getIdentifier(String id) {
+    public static @NotNull Identifier id(String id) {
         return new Identifier(NAMESPACE, id);
     }
 }
