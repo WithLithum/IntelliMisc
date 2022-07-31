@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#S#",
+    "SGS",
+    "#S#"
+  ],
+  "key": {
+    "#": {
+      "tag": "minecraft:amethyst_shard"
+    },
+    "G": {
+      "item": "minecraft:amethyst_block"
+    },
+    "S": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "intellimisc:plywood_planks",
+    "count": 3
+  }
+}
